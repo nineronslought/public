@@ -1,0 +1,17 @@
+/* Accordian */
+.accordion {margin: var(--spacer-vert) 0;border-radius: 15px; box-shadow:var(--shadow);}
+
+.accordion-collapse.collapsed {height: 0;overflow: hidden;-webkit-transition-delay: 0.2s;transition-delay: 0.2s;transition: height 0.2s ease;}
+.accordion-collapse.show {height: auto;}
+
+.accordion-item h2 {padding: 3rem 2rem; font-size: 1.5rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dotted #ccc; margin: 0;}
+.accordion-item h2 .fa {color: var(--primary); font-size: 20px;transform: rotate(180deg); transition: var(--transition);}
+.accordion-item .accordion-body {background: #FCFCFA; padding: 2rem; border-bottom: 1px dotted #ccc;}
+.accordion .accordion-item:last-of-type h2 {border-bottom: none;}
+
+.accordion-item h2.collapsed .fa {transform: rotate(0deg);}
+
+/* TABLET */
+@media (min-width: 768px) {
+.accordion-item h2 {font-size: 1.75rem; font-weight: 400;}
+} 
