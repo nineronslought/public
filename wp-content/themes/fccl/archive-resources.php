@@ -2,12 +2,13 @@
 <?php get_header(''); ?>
 <?php $post_page_id = get_option('page_for_posts'); ?>
 <?php
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args = array(
     'post_type' => 'resource',
     'post_status' => 'publish',
     'posts_per_page' => 10,
-    'orderby' => 'title',
-    'order' => 'ASC',
+    'orderby' => 'date',
+    'paged' => $paged,
 );
 
 $posts = new WP_Query($args);
@@ -58,7 +59,7 @@ $posts = new WP_Query($args);
                     <?php } ?>        
                 </figure>
                 <div class="text">
-                    <!-- <p class="date"><?php //the_time('F j, Y'); ?></p> -->
+                    <p class="date"><?php the_time('F j, Y'); ?></p>
                     <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                     <p><?php echo get_the_excerpt(); ?></p>
                     <div class="wp-block-buttons is-style-btn-text is-layout-flex">
@@ -73,7 +74,31 @@ $posts = new WP_Query($args);
 
             <div style="margin-top: 20px; text-align: center;">
                 <div class="ccm-pagination-wrapper" id="pagination">
-                    <?php informatics_pagination(); ?>
+                    <?php
+                    $total_pages = $posts->max_num_pages;
+                    
+                    if ($total_pages > 1) {
+                        $current_page = max(1, get_query_var('paged'));
+
+                        // Previous link
+                        echo '<a href="' . esc_url(get_pagenum_link($current_page - 1)) . '"><<</a>';
+
+                        // Pagination loop
+                        for ($i = 1; $i <= $total_pages; $i++) {
+                            // Current page
+                            if ($current_page == $i) {
+                                echo '<a href="#" class="active">' . $i . '</a>';
+                            } else {
+                                echo '<a href="' . esc_url(get_pagenum_link($i)) . '">' . $i . '</a>';
+                            }
+                        }
+
+                        // Next link
+                        if ($current_page < $total_pages) { // Check if it's not the last page to display the next link
+                            echo '<a href="' . esc_url(get_pagenum_link($current_page + 1)) . '">>></a>';
+                        }
+                    }
+                    ?>
                 </div>
             </div>
         </div>
