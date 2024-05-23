@@ -92,6 +92,11 @@ if ( ! defined( 'WP_DEBUG' ) ) {
 }
 
 define( 'WP_ENVIRONMENT_TYPE', 'local' );
+
+/* Local WP Error Showing */
+ini_set('display_errors','Off');
+ini_set('error_reporting', E_ALL );
+
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
