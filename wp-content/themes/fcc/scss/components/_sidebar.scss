@@ -1,0 +1,11 @@
+.sidebar.box {padding: 0; border-radius: 10px; overflow: hidden; box-shadow: var(--box-shadow-sm);}
+.sidebar.box h4 {background: var(--primary); color: #fff; font-weight: 700; padding: 15px var(--spacer) 12px var(--spacer); margin: 0;}
+.sec-nav ul {list-style: none; padding: var(--spacer); margin: 0;}
+.sec-nav ul a {display: block; padding: 10px 5px; color: var(--text); text-decoration: none; border-bottom: 2px dotted var(--secondary); font-size: .9rem;}
+.sec-nav ul li:last-of-type a {border: none;}
+.sec-nav ul a:hover {padding: 10px 0 10px 15px; text-decoration: underline;}
+.sec-nav ul > .current_page_item > a {color: var(--primary); font-weight: 700;}
+
+.tag-list ul {display: flex; flex-wrap: wrap; list-style: none; padding: var(--spacer); gap: 5px; margin: 0;}
+.tag-list a {padding: 4px 6px; background: #fff; font-size: .85rem; border-radius: 4px; display: inline;}
+.tag-list li a:hover {background: none;}

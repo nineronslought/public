@@ -8,6 +8,7 @@ $args = array(
     'post_status' => 'publish',
     'posts_per_page' => 10,
     'orderby' => 'date',
+	'order' => 'DESC',
     'paged' => $paged,
 );
 

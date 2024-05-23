@@ -2,10 +2,9 @@
 
 namespace WPMailSMTP;
 
-use Plugin_Upgrader;
 use WP_Error;
 use WPMailSMTP\Admin\PluginsInstallSkin;
-use WPMailSMTP\Helpers\Helpers;
+use WPMailSMTP\Admin\PluginsInstallUpgrader;
 
 /**
  * WP Mail SMTP Connect.
@@ -218,14 +217,7 @@ class Connect {
 			wp_send_json_success( esc_html__( 'Plugin installed & activated.', 'wp-mail-smtp' ) );
 		}
 
-		/*
-		 * The `request_filesystem_credentials` function will output a credentials form in case of failure.
-		 * We don't want that, since it will break AJAX response. So just hide output with a buffer.
-		 */
-		ob_start();
-		// phpcs:ignore WPForms.Formatting.EmptyLineAfterAssigmentVariables.AddEmptyLine
 		$creds = request_filesystem_credentials( $url, '', false, false, null );
-		ob_end_clean();
 
 		// Check for file system permissions.
 		$perm_error = esc_html__( 'There was an error while installing an upgrade. Please check file system permissions and try again. Also, you can download the plugin from wpmailsmtp.com and install it manually.', 'wp-mail-smtp' );
@@ -241,11 +233,8 @@ class Connect {
 		// Do not allow WordPress to search/download translations, as this will break JS output.
 		remove_action( 'upgrader_process_complete', array( 'Language_Pack_Upgrader', 'async_upgrade' ), 20 );
 
-		// Import the plugin upgrader.
-		Helpers::include_plugin_upgrader();
-
 		// Create the plugin upgrader with our custom skin.
-		$installer = new Plugin_Upgrader( new PluginsInstallSkin() );
+		$installer = new PluginsInstallUpgrader( new PluginsInstallSkin() );
 
 		// Error check.
 		if ( ! method_exists( $installer, 'install' ) ) {

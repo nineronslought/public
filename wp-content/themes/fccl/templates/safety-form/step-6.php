@@ -36,7 +36,7 @@ if ((isset($_GET['back']) && $_GET['back'] === 'true') && (isset($data["pets"]) 
 <div class="container">
     <h2>Safety for Pets </h2>
     <p>
-    This section will help you plan for safety with your pets. Think through the questions and provide honest answers to the best of your ability.
+        This section will help you plan for safety with your pets. Think through the questions and provide honest answers to the best of your ability.
     </p>
 
     <label for="petprovider" class="form-label">
@@ -44,15 +44,13 @@ if ((isset($_GET['back']) && $_GET['back'] === 'true') && (isset($data["pets"]) 
         <em>It's good to have emergency provisions stored for your pet(s) in case your partner withholds
             money from you.</em>
     </label>
-    <textarea class="form-control" id="petprovider" name="petprovider"
-              rows="2"><?php echo($data['petprovider']) ?></textarea>
+    <textarea class="form-control" id="petprovider" name="petprovider" rows="2"><?php echo ($data['petprovider']) ?></textarea>
 
     <label for="nearestvet" class="form-label">
         What is the name, address, and phone number of the nearest vet that provides 24-hour emergency
         services?
     </label>
-    <textarea class="form-control" id="nearestvet" name="nearestvet"
-              rows="2"><?php echo($data['nearestvet']) ?></textarea>
+    <textarea class="form-control" id="nearestvet" name="nearestvet" rows="2"><?php echo ($data['nearestvet']) ?></textarea>
 
     <label for="ownership" class="form-label">
         Is your pet's ownership in your name? If yes, list documents that prove ownership and keep copies of
@@ -62,7 +60,7 @@ if ((isset($_GET['back']) && $_GET['back'] === 'true') && (isset($data["pets"]) 
             changed.
         </em>
     </label>
-    <textarea class="form-control" id="ownership" name="ownership" rows="2"><?php echo($data['ownership']) ?></textarea>
+    <textarea class="form-control" id="ownership" name="ownership" rows="2"><?php echo ($data['ownership']) ?></textarea>
 
     <label for="takepet" class="form-label">
         Who could take your pet(s) if you need to leave your home immediately?
@@ -71,7 +69,7 @@ if ((isset($_GET['back']) && $_GET['back'] === 'true') && (isset($data["pets"]) 
             location isn't disclosed to your partner.
         </em>
     </label>
-    <textarea class="form-control" id="takepet" name="takepet" rows="2"><?php echo($data['takepet']) ?></textarea>
+    <textarea class="form-control" id="takepet" name="takepet" rows="2"><?php echo ($data['takepet']) ?></textarea>
 
 
     <div class="form-group">
@@ -80,11 +78,15 @@ if ((isset($_GET['back']) && $_GET['back'] === 'true') && (isset($data["pets"]) 
     </div>
 
     <div class="form-grid">
-        <?php foreach ($pet_checklist as $key => $value) { ?>
+
+        <?php
+        // Ensure $data['pet_checklist'] is always an array
+        $petChecklistItems = $data['pet_checklist'] ?? [];
+
+        foreach ($pet_checklist as $key => $value) { ?>
             <div class="form-group">
                 <label><?php echo $value; ?></label><br>
-                <input type="checkbox" name="pet_checklist[]" value="<?php echo $key; ?>"
-                    <?php echo(in_array($key, $data['pet_checklist']) ? 'checked="checked"' : '') ?> >
+                <input type="checkbox" name="pet_checklist[]" value="<?php echo $key; ?>" <?php echo (in_array($key, $petChecklistItems) ? 'checked="checked"' : '') ?>>
             </div>
         <?php } ?>
     </div> <!-- End Form Grid  -->
@@ -93,19 +95,18 @@ if ((isset($_GET['back']) && $_GET['back'] === 'true') && (isset($data["pets"]) 
     <label for="othervets" class="form-label">
         What are some alternative veterinarians you could use if you need to change due to your partner?
     </label>
-    <textarea class="form-control" id="othervets" name="othervets" rows="2"><?php echo($data['othervets']) ?></textarea>
+    <textarea class="form-control" id="othervets" name="othervets" rows="2"><?php echo ($data['othervets']) ?></textarea>
 
     <label for="microchipped" class="form-label">
         Is your pet microchipped? Who is listed as a contact? Do you need to change it?
     </label>
-    <textarea class="form-control" id="microchipped" name="microchipped"
-              rows="2"><?php echo($data['microchipped']) ?></textarea>
+    <textarea class="form-control" id="microchipped" name="microchipped" rows="2"><?php echo ($data['microchipped']) ?></textarea>
 
 
     <label for="petroute" class="form-label">
         If you need to walk your pet(s), what is the safest route? Is there anyone that could go with you?
     </label>
-    <textarea class="form-control" id="petroute" name="petroute" rows="2"><?php echo($data['petroute']) ?></textarea>
+    <textarea class="form-control" id="petroute" name="petroute" rows="2"><?php echo ($data['petroute']) ?></textarea>
 
     <label for="petOtherInfo" class="form-label">Is there any other information you want to write down to help with your safety with your pets? <em>Writing things down can help provide clarity in stressful situations because even when something seems obvious, it can be difficult to think clearly in a crisis situation.</em></label>
     <textarea class="form-control" id="petOtherInfo" name="petOtherInfo" rows="2"><?php echo ($data['petOtherInfo']) ?></textarea>

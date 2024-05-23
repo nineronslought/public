@@ -1,0 +1,11 @@
+/* Image Combo */
+.img-combo {padding: 0 0 100px 50px; position: relative;}
+.img-combo img {aspect-ratio: inherit; border-radius: 5px;}
+.img-combo img:nth-of-type(1) {width: 85%; margin-left: 15%;}
+.img-combo img:nth-of-type(2) {position: absolute; bottom: 0; left: 0; border: 15px solid var(--bg-color); width: 50%;}
+.img-combo:after {width: 100%; height: 100%; background: url(../img/bkg-img.jpg); background-size: contain; position: absolute; inset: 0; z-index: -1; mix-blend-mode: multiply; content: ""; background-repeat: no-repeat;}
+
+.img-combo.alternate_layout:after {transform: rotate(180deg);}
+.img-combo.alternate_layout {padding: 0 0 0 50px;}
+.img-combo.alternate_layout img:nth-of-type(1) {width: 65%; margin-left: 15%; aspect-ratio: 2 / 3; object-fit: cover;}
+.img-combo.alternate_layout img:nth-of-type(2) {width: 45%; margin-left: 55%; bottom: 150px;}

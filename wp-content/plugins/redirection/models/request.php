@@ -1,7 +1,5 @@
 <?php
 
-require_once __DIR__ . '/ip.php';
-
 class Redirection_Request {
 	/**
 	 * URL friendly sanitize_text_fields which lets encoded characters through and doesn't trim
@@ -95,9 +93,7 @@ class Redirection_Request {
 			$host = sanitize_text_field( $_SERVER['HTTP_HOST'] );
 		}
 
-		$parts = explode( ':', $host );
-
-		return apply_filters( 'redirection_request_server_host', $parts[0] );
+		return apply_filters( 'redirection_request_server_host', $host );
 	}
 
 	/**
@@ -188,24 +184,26 @@ class Redirection_Request {
 	 * @return string
 	 */
 	public static function get_ip() {
-		$options = red_get_options();
-		$ip = new Redirection_IP();
+		$ip = '';
 
-		// This is set by the server, but may not be the actual IP
-		if ( isset( $_SERVER['REMOTE_ADDR'] ) ) {
-			$ip = new Redirection_IP( $_SERVER['REMOTE_ADDR'] );
-		}
-
-		if ( in_array( $ip->get(), $options['ip_proxy'], true ) || empty( $options['ip_proxy'] ) ) {
-			foreach ( $options['ip_headers'] as $header ) {
-				if ( isset( $_SERVER[ $header ] ) ) {
-					$ip = new Redirection_IP( $_SERVER[ $header ] );
-					break;
-				}
+		foreach ( self::get_ip_headers() as $var ) {
+			if ( ! empty( $_SERVER[ $var ] ) && is_string( $_SERVER[ $var ] ) ) {
+				$ip = sanitize_text_field( $_SERVER[ $var ] );
+				$ip = explode( ',', $ip );
+				$ip = array_shift( $ip );
+				break;
 			}
 		}
 
-		return apply_filters( 'redirection_request_ip', $ip->get() );
+		// Convert to binary
+		// phpcs:ignore
+		$ip = @inet_pton( trim( $ip ) );
+		if ( $ip !== false ) {
+			// phpcs:ignore
+			$ip = @inet_ntop( $ip );  // Convert back to string
+		}
+
+		return apply_filters( 'redirection_request_ip', $ip ? $ip : '' );
 	}
 
 	/**

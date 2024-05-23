@@ -368,7 +368,7 @@ class Red_Item {
 	 * Return only the 'item' element
 	 *
 	 * @param array $item Item.
-	 * @return string
+	 * @return String
 	 */
 	public static function reduce_sorted_items( $item ) {
 		return $item['item'];
@@ -443,7 +443,7 @@ class Red_Item {
 	/**
 	 * Disable all redirects that match the URL
 	 *
-	 * @param string $url URL to match.
+	 * @param String $url URL to match.
 	 * @return void
 	 */
 	public static function disable_where_matches( $url ) {
@@ -622,8 +622,8 @@ class Red_Item {
 	/**
 	 * Register a visit against this redirect
 	 *
-	 * @param string      $url Full URL that is visited, including query parameters.
-	 * @param string|true $target Target URL, if appropriate.
+	 * @param String      $url Full URL that is visited, including query parameters.
+	 * @param String|true $target Target URL, if appropriate.
 	 * @return void
 	 */
 	public function visit( $url, $target ) {
@@ -874,7 +874,7 @@ class Red_Item {
 	/**
 	 * Get action data
 	 *
-	 * @return string
+	 * @return String
 	 */
 	public function get_action_data() {
 		return $this->action_data ? $this->action_data : '';

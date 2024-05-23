@@ -252,14 +252,12 @@ trait WPCF7_Sendinblue_API {
 	}
 
 
-	public function get_lists( $options = '' ) {
-		$options = wp_parse_args( $options, array(
-			'limit' => 50,
-			'offset' => 0,
-		) );
-
+	public function get_lists() {
 		$endpoint = add_query_arg(
-			$options,
+			array(
+				'limit' => 50,
+				'offset' => 0,
+			),
 			'https://api.sendinblue.com/v3/contacts/lists'
 		);
 
@@ -338,7 +336,7 @@ trait WPCF7_Sendinblue_API {
 				'Content-Type' => 'application/json; charset=utf-8',
 				'API-Key' => $this->get_api_key(),
 			),
-			'body' => wp_json_encode( $properties ),
+			'body' => json_encode( $properties ),
 		);
 
 		$response = wp_remote_post( $endpoint, $request );
@@ -366,7 +364,7 @@ trait WPCF7_Sendinblue_API {
 				'Content-Type' => 'application/json; charset=utf-8',
 				'API-Key' => $this->get_api_key(),
 			),
-			'body' => wp_json_encode( $properties ),
+			'body' => json_encode( $properties ),
 		);
 
 		$response = wp_remote_post( $endpoint, $request );

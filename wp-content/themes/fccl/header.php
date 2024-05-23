@@ -51,7 +51,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="hdr-desktop">
         <div id="hdr-main">
             <a href="/" id="logo">
-              <img src="<?php echo get_theme_file_uri() ?>/img/FCC-logo-white.png" alt="Family Crisis Centers Logo" />
+              <img src="<?php echo get_theme_file_uri() ?>/img/ivs-logo-white-text.png" alt="Family Crisis Centers Logo" />
             </a>
             <button id="menu-toggle" class="collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-expanded="false" aria-controls="menu">
                 <div class="closed">

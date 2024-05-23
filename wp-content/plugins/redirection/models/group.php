@@ -42,7 +42,7 @@ class Red_Group {
 	/**
 	 * Constructor
 	 *
-	 * @param string|Object $values Values.
+	 * @param String|Object $values Values.
 	 */
 	public function __construct( $values = '' ) {
 		if ( is_object( $values ) ) {

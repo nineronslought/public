@@ -272,12 +272,6 @@ WPMailSMTP.Admin.Settings = WPMailSMTP.Admin.Settings || ( function( document, w
 					},
 				} );
 			} );
-
-			$( '#wp-mail-smtp-setting-gmail-one_click_setup_enabled-lite' ).on( 'click', function( e ) {
-				e.preventDefault();
-
-				app.education.gmailOneClickSetupUpgrade();
-			} );
 		},
 
 		education: {
@@ -285,33 +279,15 @@ WPMailSMTP.Admin.Settings = WPMailSMTP.Admin.Settings || ( function( document, w
 
 				var mailerName = $input.data( 'title' ).trim();
 
-				app.education.upgradeModal(
-					wp_mail_smtp.education.upgrade_title.replace( /%name%/g, mailerName ),
-					wp_mail_smtp.education.upgrade_content.replace( /%name%/g, mailerName ),
-					$input.val()
-				);
-			},
-
-			gmailOneClickSetupUpgrade: function() {
-
-				app.education.upgradeModal(
-					wp_mail_smtp.education.gmail.one_click_setup_upgrade_title,
-					wp_mail_smtp.education.gmail.one_click_setup_upgrade_content,
-					'gmail-one-click-setup'
-				);
-			},
-
-			upgradeModal: function( title, content, upgradeUrlUtmContent ) {
-
 				$.alert( {
 					backgroundDismiss: true,
 					escapeKey: true,
 					animationBounce: 1,
 					type: 'blue',
 					closeIcon: true,
-					title: title,
+					title: wp_mail_smtp.education.upgrade_title.replace( /%name%/g, mailerName ),
 					icon: '"></i>' + wp_mail_smtp.education.upgrade_icon_lock + '<i class="',
-					content: content,
+					content: wp_mail_smtp.education.upgrade_content.replace( /%name%/g, mailerName ),
 					boxWidth: '550px',
 					onOpenBefore: function() {
 						this.$btnc.after( '<div class="discount-note">' + wp_mail_smtp.education.upgrade_bonus + wp_mail_smtp.education.upgrade_doc + '</div>' );
@@ -324,7 +300,7 @@ WPMailSMTP.Admin.Settings = WPMailSMTP.Admin.Settings || ( function( document, w
 							keys: [ 'enter' ],
 							action: function() {
 								var appendChar = /(\?)/.test( wp_mail_smtp.education.upgrade_url ) ? '&' : '?',
-									upgradeURL = wp_mail_smtp.education.upgrade_url + appendChar + 'utm_content=' + encodeURIComponent( upgradeUrlUtmContent );
+									upgradeURL = wp_mail_smtp.education.upgrade_url + appendChar + 'utm_content=' + encodeURIComponent( $input.val() );
 
 								window.open( upgradeURL, '_blank' );
 							}
@@ -386,7 +362,7 @@ WPMailSMTP.Admin.Settings = WPMailSMTP.Admin.Settings || ( function( document, w
 			} );
 
 			// Set settings changed attribute, if any input was changed.
-			$( ':input:not( #wp-mail-smtp-setting-license-key, .wp-mail-smtp-not-form-input, #wp-mail-smtp-setting-gmail-one_click_setup_enabled )', $settingPages ).on( 'change', function() {
+			$( ':input:not( #wp-mail-smtp-setting-license-key, .wp-mail-smtp-not-form-input )', $settingPages ).on( 'change', function() {
 				app.pluginSettingsChanged = true;
 			} );
 

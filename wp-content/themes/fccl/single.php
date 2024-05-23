@@ -6,7 +6,9 @@
     <div class="blog-hdr">
       <p class="date"><?php the_date(); ?></p>
       <h1><?php the_title(); ?></h1>
-      <p class="is-style-lead"><?php echo get_the_excerpt() ?></p>
+      <?php if (has_excerpt()) : ?>
+          <p class="is-style-callout"><?php echo get_the_excerpt(); ?></p>
+        <?php endif; ?>
       <div class="wp-block-buttons is-style-btn-text is-layout-flex is-content-justification-center">
         <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/the-inside-story/">Back to Listing</a></div>
       </div>

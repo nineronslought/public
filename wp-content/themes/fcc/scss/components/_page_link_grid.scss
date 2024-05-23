@@ -1,0 +1,6 @@
+.page-link-grid {display: grid;grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; margin: var(--spacer-vert) auto;}
+
+/* TABLET */
+@media (min-width: 768px) {
+.page-link-grid .text {grid-column: span 2;}
+} 

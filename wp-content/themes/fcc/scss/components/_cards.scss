@@ -1,0 +1,37 @@
+/* card */
+.theme-card {transition:var(--transition); background: var(--primary); color: #fff; padding: 2rem; border-radius: 15px; width: 100%; height: 100%;}
+.theme-card:hover {box-shadow:0 12px 34px rgba(122,102,137,0.75);background:#661e8a; border-radius: 15px;}
+.theme-card h3 {color: #fff; font-weight: 700; font-size: 1.3rem;}
+.theme-card .is-style-btn-text .wp-block-button__link {color: var(--secondary); text-decoration-color: var(--secondary);}
+
+.post-card figure img {width: 100%; height: 100%; object-fit: cover;}
+.post-card .text {padding: 2rem;}
+.post-card .text h3 {font-weight: 700; font-size: 1.5rem;}
+
+.page-link-card {background: #fff; border-radius: 10px; box-shadow: var(--box-shadow-sm); overflow: hidden;}
+.page-link-card figure {border-radius: 0; overflow: hidden; aspect-ratio: 5 / 3;}
+.page-link-card figure img {border-radius: 0; width: 100%; height: 100%; object-fit: cover; transition: var(--transition);}
+.page-link-card .card-body {padding: 25px;}
+.page-link-card h3 {font-size: 1.5rem; font-weight: 700;}
+.page-link-card .btn-text {padding: 15px 25px; display: block; border-top: 2px dotted #ccc; text-decoration: none; color: var(--primary); text-transform: uppercase; font-weight: 700; letter-spacing: 1px; font-size: .85rem;}
+.page-link-card .fa {transition: var(--transition);}
+.page-link-card .btn-text:hover {background: var(--secondary);}
+.page-link-card .btn-text:hover .fa {margin-left: 5px;}
+.page-link-card:hover img {transform: scale(1.05);}
+
+.people-grid {display: flex; flex-wrap: wrap; gap: 2rem; margin: var(--spacer-vert) auto; justify-content: center}
+.person-card {flex: 0 1 250px; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 0 25px rgba(0,0,0,.08);}
+.person-card > img {aspect-ratio: 1.75 / 2; object-fit: cover; }
+.person-card .card-body {padding: 2rem 1rem; background: var(--primary); color: #fff; text-align: center; flex-grow: 1;}
+.person-card .card-body h3 {color: #fff; font-size: 1.25rem; font-weight: 700;}
+.person-card .card-body p:last-of-type {margin-bottom: 0;}
+.person-card .card-body .card-title {font-size: .85rem;}
+
+/* TABLET */
+@media (min-width:768px){
+
+}
+
+@media (min-width: 1200px) {
+
+}
