@@ -4,6 +4,9 @@
 .is-style-callout {font-size: 1.5rem; color: #888;}
 .is-style-max-width {max-width: 800px;}
 .is-style-loud {font-size: 3.25rem; font-weight: 800; color: var(--secondary);}
+.has-black-background-color {
+    background-color: #11356a !important;
+  }
 
 /* TABLET */
 @media (min-width: 768px) {

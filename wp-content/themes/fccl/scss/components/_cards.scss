@@ -1,6 +1,6 @@
 /* card */
 .theme-card {transition:var(--transition); background: var(--primary); color: #fff; padding: 2rem; border-radius: 15px; width: 100%; height: 100%;}
-.theme-card:hover {box-shadow:0 12px 34px rgba(122,102,137,0.75);background:#661e8a; border-radius: 15px;}
+.theme-card:hover {  box-shadow:0 12px 34px rgba(0,0,0,.15);background:#3b56a7; border-radius: 15px;}
 .theme-card h3 {color: #fff; font-weight: 700; font-size: 1.3rem;}
 .theme-card .is-style-btn-text .wp-block-button__link {color: var(--secondary); text-decoration-color: var(--secondary);}
 

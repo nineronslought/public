@@ -14,7 +14,7 @@ $image = get_field('image');
 
   <div class="content">
     <h1><?php
-        if (get_queried_object()->post_name == 'the-inside-story') {
+        if (get_queried_object()->post_name == 'resource') {
           echo get_post_field('post_title', 14);
         } else {
           the_title();

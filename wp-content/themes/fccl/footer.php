@@ -9,14 +9,14 @@
        <h2><strong>Free</strong> & <strong>Confidential</strong> Services 24/7</h2>
       </div>
       <div class="col text-help">
-        <p><a href="/get-help-now">Get Help Now</a></p>
+        <p><a href="/get-help">Get Help Now</a></p>
         <p class="phone">1-800-382-5603 <span>Text 'IOWAHELP' to 20121</span></p>
       </div>
     </div>
 
     <div class="ftr-cols">
       <div class="col">
-      <img src="<?php echo get_theme_file_uri() ?>/img/FCC-logo-white.png" alt="Our Savior's Logo in White" />
+      <img src="<?php echo get_theme_file_uri() ?>/img/ivs-logo-white-text.png" alt="Iowa Victim Service Call Center Logo" />
         <div class="text">
         <?php if ( is_active_sidebar( 'footer_info' ) ) : ?>
           <?php dynamic_sidebar( 'footer_info' ); ?>
@@ -51,12 +51,12 @@
       <div class="col">
         <h4>See the Impact of Giving</h4>
         <div class="wp-block-button">
-            <a href="https://familycrisiscenters.kindful.com/" target="_blank" class="wp-block-button__link btn-theme" href="">Donate Now</a>
+            <a href="https://familycrisiscenters.planningyourlegacy.org/" target="_blank" class="wp-block-button__link btn-theme" href="">Donate Now</a>
         </div>
       </div>
     </div>
     
-    <p class="ftr-copy">©<?php echo date("Y"); ?> Family Crisis Centers. All Rights Reserved. Web Application by <a target="_blank" href="https://www.informaticsinc.com/">Informatics, Inc</a></p>
+    <p class="ftr-copy">©<?php echo date("Y"); ?> Iowa Victim Service Call Center. All Rights Reserved. Web Application by <a target="_blank" href="https://www.informaticsinc.com/">Informatics, Inc</a></p>
   </div>
   
 </footer>

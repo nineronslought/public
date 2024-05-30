@@ -2,7 +2,7 @@
 .full-img-content .grid {position: relative;}
 .full-img-content figure {border-radius: 10px; overflow: hidden; box-shadow: var(--box-shadow-sm); margin: 0;}
 .full-img-content figure img {width: 100%; height: 100%; object-fit: cover;}
-.full-img-content .text {width: 90%; margin-left: 5%; margin-top: -50px; border-radius: 10px; background: #fff; box-shadow: 0 0 15px rgba(0,0,0,.1); padding: 2rem;}
+.full-img-content .text {width: 90%; margin-left: 5%; margin-top: -50px; border-radius: 10px; background: #fff; box-shadow:4px 22px 45px rgba(0,0,0,.1); padding: 2rem;}
 
 @media (min-width:768px) {
 .full-img-content figure {aspect-ratio: 4 / 2.5;}

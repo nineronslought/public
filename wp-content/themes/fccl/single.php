@@ -10,7 +10,7 @@
           <p class="is-style-callout"><?php echo get_the_excerpt(); ?></p>
         <?php endif; ?>
       <div class="wp-block-buttons is-style-btn-text is-layout-flex is-content-justification-center">
-        <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/the-inside-story/">Back to Listing</a></div>
+        <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/resource/">Back to Listing</a></div>
       </div>
     </div>
     <div class="blog-content">
@@ -32,7 +32,7 @@
         if ($archive_link) {
             // Output the link in the specified format
             echo '<div class="wp-block-buttons is-style-btn-text is-layout-flex is-content-justification-center">';
-            echo '<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/the-inside-story/">Back to Listing</a></div>';
+            echo '<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/resource/">Back to Listing</a></div>';
             echo '</div>';
         }
         ?>
