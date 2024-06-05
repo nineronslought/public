@@ -10,7 +10,7 @@
       </div>
       <div class="col text-help">
         <p><a href="/get-help">Get Help Now</a></p>
-        <p class="phone">1-800-382-5603 <span>Text 'IOWAHELP' to 20121</span></p>
+        <p class="phone">1-800-770-1650 <span>Text 'IOWAHELP' to 20121</span></p>
       </div>
     </div>
 
