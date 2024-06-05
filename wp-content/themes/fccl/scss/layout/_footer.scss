@@ -26,9 +26,13 @@
 .wp-block-social-links .wp-social-link a {border: 1px solid var(--secondary) ; padding: 7px !important; border-radius: 50%;}
 .wp-block-social-links .wp-social-link a:hover {color: #fff !important; border: 1px solid #fff;}
 
-.footer .wp-block-button a {background: var(--secondary); color: var(--primary);}
 .footer .wp-block-button a:hover {background: #fff; color: var(--primary);}
-
+.footer .wp-block-button a {
+    background: var(--secondary);
+    color: var(--primary);
+    border-radius: 111px;
+    margin-top: 10px;
+  }
 #quick-exit {position: fixed; bottom: 15px; right: 15px; padding: 1rem; background: #D81D1D; color: #fff; font-weight: 700; border-radius: 5px; box-shadow: 5px 5px 15px rgba(0,0,0,.1);}
 #quick-exit .fa {margin-right: 5px;}
 #quick-exit:hover {background: #B91919;}

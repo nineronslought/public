@@ -95,7 +95,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 ));
             ?>
           </div>
-          <a href="https://familycrisiscenters.planningyourlegacy.org/" target="_blank" class="btn-theme wp-block-button__link ">Donate Now</a>
+          <a href="https://familycrisiscenters.kindful.com/?campaign=1094533" target="_blank" class="btn-theme wp-block-button__link ">Other Ways to Donate</a>
         </nav>
         </div>
     </div>

@@ -44,10 +44,10 @@
 .hdr-desktop {display: flex; justify-content: space-between; align-items: center;}
 #menu {display: flex; align-items: center;}
 #menu ul {display: flex;}
-#menu ul a {padding: 2.15rem .65rem; font-size: .85rem; letter-spacing: .5px;}
+#menu ul a{padding:2.15rem .40rem;font-size:.70rem;letter-spacing:0px;}
 
 /* Header CTA Button */
-#menu .wp-block-button__link {margin-left: 1rem; background: #fff; color: var(--primary);}
+#menu .wp-block-button__link {margin-left: 1rem; background: #fff; color: var(--primary);padding-left:15px;padding-right:15px;}
 #menu .wp-block-button__link:hover {background: var(--primary); color: #fff;}
 
 /* Dropdown */
@@ -79,6 +79,8 @@
     
 /* WIDE DESKTOP */
 @media (min-width: 1200px) {
+#menu ul a {padding: 2.15rem .62rem; font-size: .80rem; letter-spacing: .5px;}
+#menu .wp-block-button__link {padding-left:20px;padding-right:20px;}
 }
 
 /* SUPER WIDE DESKTOP */

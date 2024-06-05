@@ -51,7 +51,7 @@
       <div class="col">
         <h4>See the Impact of Giving</h4>
         <div class="wp-block-button">
-            <a href="https://familycrisiscenters.planningyourlegacy.org/" target="_blank" class="wp-block-button__link btn-theme" href="">Donate Now</a>
+            <a href="https://familycrisiscenters.kindful.com/?campaign=1094533" target="_blank" class="wp-block-button__link btn-theme" >Other Ways to Donate</a>
         </div>
       </div>
     </div>
