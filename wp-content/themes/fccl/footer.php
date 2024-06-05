@@ -9,7 +9,7 @@
        <h2><strong>Free</strong> & <strong>Confidential</strong> Services 24/7</h2>
       </div>
       <div class="col text-help">
-        <p><a href="/get-help ">Get Help Now</a></p>
+        <p><a href="/get-help">Get Help Now</a></p>
         <p class="phone">1-800-770-1650 <span>Text 'IOWAHELP' to 20121</span></p>
       </div>
     </div>
