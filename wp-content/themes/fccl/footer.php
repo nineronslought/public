@@ -19,7 +19,7 @@
       <img src="<?php echo get_theme_file_uri() ?>/img/ivs-logo-white-text.png" alt="Iowa Victim Service Call Center Logo" />
         <div class="text">
         <?php if ( is_active_sidebar( 'footer_info' ) ) : ?>
-          <?php dynamic_sidebar( 'footer_info' ); ?>
+          <?php dynamic_sidebar( 'footer_info' );?>
         <?php endif; ?>
         </div>
       </div>
