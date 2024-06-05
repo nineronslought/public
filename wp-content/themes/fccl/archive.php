@@ -25,7 +25,7 @@
                   echo '<h1>' . esc_html($post_type->labels->name) . '</h1>';
               } else {
                   // For other pages, display the page title
-                  echo '<h1>' . get_the_title() . '</h1>';
+                  echo '<h1>' . single_cat_title() . '</h1>';
               }
               ?>
 
@@ -42,7 +42,7 @@
                         ?>
                         <img src="<?php echo the_post_thumbnail_url() ?>" alt="<?php echo $alt_text ;?>" />
                         <?php } else { ?>
-                            <img src="<?php echo get_theme_file_uri() ?>/img/default-image.jpg" alt="Our Savior's Lutheran Church" />
+                            <img src="<?php echo get_theme_file_uri() ?>/img/default-image-1.png" alt="Our Savior's Lutheran Church" />
                         <?php } ?>        
                     </figure>
                     <div class="text">

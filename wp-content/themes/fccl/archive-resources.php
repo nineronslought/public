@@ -1,4 +1,4 @@
-<?php /* Template Name: archive-resource */ ?>
+<?php /* Template Name: archive-resources */ ?>
 <?php get_header(''); ?>
 <?php $post_page_id = get_option('page_for_posts'); ?>
 <?php
@@ -15,20 +15,13 @@ $args = array(
 $posts = new WP_Query($args);
 ?>
 <main id="content">
-    <?php the_content(); ?>
-    <!-- <section class="page-hdr">
+    <?php //the_content(); ?>
+    <section class="page-hdr">
 
         <figure>
             <?php echo get_the_post_thumbnail($post_page_id, 'post_thumbnail', array()); ?>
         </figure>
         <div class="content">
-            <nav aria-label="breadcrumb">
-                <?php
-                if (function_exists('yoast_breadcrumb')) {
-                    yoast_breadcrumb('<ol class="breadcrumb-nav">', '</ol>');
-                }
-                ?>
-            </nav>
             <?php
             if (is_category() || is_tag()) {
                 // Check if it's a category or tag archive
@@ -42,9 +35,16 @@ $posts = new WP_Query($args);
                 echo '<h1>' . get_the_title() . '</h1>';
             }
             ?>
+            <nav aria-label="breadcrumb">
+                <?php
+                if (function_exists('yoast_breadcrumb')) {
+                    yoast_breadcrumb('<ol class="breadcrumb-nav">', '</ol>');
+                }
+                ?>
+            </nav>
 
         </div>
-    </section> -->
+    </section>
     <div class="wp-block-columns is-layout-flex">
         <div class="wp-block-column" style="flex-basis: 75%;">
             <?php while ($posts->have_posts()) : $posts->the_post(); ?>
@@ -56,7 +56,7 @@ $posts = new WP_Query($args);
                     ?>
                     <img src="<?php echo the_post_thumbnail_url() ?>" alt="<?php echo $alt_text ;?>" />
                     <?php } else { ?>
-                        <img src="<?php echo get_theme_file_uri() ?>/img/default-image.jpg" alt="Our Savior's Lutheran Church" />
+                        <img src="<?php echo get_theme_file_uri() ?>/img/default-image-1.png" alt="Our Savior's Lutheran Church" />
                     <?php } ?>        
                 </figure>
                 <div class="text">
@@ -110,7 +110,7 @@ $posts = new WP_Query($args);
                     <ul>
                         <?php
                         $categories = get_terms(array(
-                            'taxonomy' => 'category',
+                            'taxonomy' => 'resource-category',
                             'hide_empty' => false,
                         ));
                         foreach ($categories as $category) {

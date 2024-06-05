@@ -17,7 +17,7 @@
 .page-link-card .fa {transition: var(--transition);}
 .page-link-card .btn-text:hover {background: var(--secondary);}
 .page-link-card .btn-text:hover .fa {margin-left: 5px;}
-.page-link-card:hover img {transform: scale(1.05); }
+.page-link-card:hover img {transform: scale(1.05);}
 
 .people-grid {display: flex; flex-wrap: wrap; gap: 2rem; margin: var(--spacer-vert) auto; justify-content: center}
 .person-card {flex: 0 1 250px; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 0 25px rgba(0,0,0,.08);}
@@ -25,7 +25,7 @@
 .person-card .card-body {padding: 2rem 1rem; background: var(--primary); color: #fff; text-align: center; flex-grow: 1;}
 .person-card .card-body h3 {color: #fff; font-size: 1.25rem; font-weight: 700;}
 .person-card .card-body p:last-of-type {margin-bottom: 0;}
-.person-card .card-body .card-title {font-size: .85rem;}
+.person-card .card-body .card-title {font-size: .85rem} 
 
 /* TABLET */
 @media (min-width:768px){
